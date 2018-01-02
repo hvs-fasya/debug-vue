@@ -10,11 +10,17 @@
           <div class="mdc-menu-anchor">
               <div class="mdc-simple-menu" v-bind:class="{'mdc-simple-menu--open': menuOpen }" tabindex="-1">
                 <ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
-                  <li class="mdc-list-item" role="menuitem" tabindex="0">
-                    A Menu Item
+                  <li @click="goToRoute('/')" class="mdc-list-item" role="menuitem" tabindex="0">
+                    Home
                   </li>
-                  <li class="mdc-list-item" role="menuitem" tabindex="0">
-                    Another Menu Item
+                  <li @click="goToRoute('ubung')" class="mdc-list-item" role="menuitem" tabindex="0">
+                    Übungen
+                  </li>
+                  <li @click="goToRoute('wort')" class="mdc-list-item" role="menuitem" tabindex="0">
+                    Wörterbch
+                  </li>
+                  <li @click="goToRoute('theory')" class="mdc-list-item" role="menuitem" tabindex="0">
+                    Theory
                   </li>
                 </ul>
               </div>
@@ -26,6 +32,8 @@
 </template>
 
 <script>
+
+import Router from '@/router/index.js'
 
 export default {
   name: 'toolbar',
@@ -49,6 +57,9 @@ export default {
     closeMenu: function () {
       this.menuOpen = false
       document.removeEventListener('click', this.documentClick)
+    },
+    goToRoute: function (route) {
+      Router.push(route)
     }
   }
 }

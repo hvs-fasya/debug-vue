@@ -2,7 +2,7 @@
 <div class="flip-container" v-bind:class="{ flip: translated }">
     <div class="flipper">
       <div class="front">
-        <div @tap="translated=!translated" @click="translated=!translated" class="mdc-card demo-card">
+        <div @tap="translated=!translated" @click="translated=!translated" class="mdc-card wort-card">
           <section class="mdc-card__media">
           <section class="mdc-card__media-item mdc-card__media-item--1x">
             <h1 class="mdc-card__title mdc-card__title--large">{{ artikel }} {{ text }}</h1>
@@ -51,11 +51,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
   .mdc-card {
     margin: 16px;
   }
-  .demo-card {
+  .wort-card {
     background-color: var(--mdc-theme-background);
   }
   h1.mdc-card__title {

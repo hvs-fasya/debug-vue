@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wort-container">
       <select-lesson :lessonNumber="lessonNumber"></select-lesson>
       <wort-card :wort="wort" ref="card"></wort-card>
       <div class="mdc-slider" tabindex="0" role="slider">
@@ -85,12 +85,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
   .next-container {
     height: 200px;
     width: 300px;
     text-align: right;
   }
   .mdc-slider {
-    width: 95%;
+    width: 300px;
   }
+  
+  @media only screen and (min-width: 980px) {
+    .wort-container {
+      margin-left: 10%;
+    }
+  }
+
 </style>

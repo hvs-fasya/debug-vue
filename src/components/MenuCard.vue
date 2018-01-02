@@ -1,6 +1,6 @@
 <template>
-<div @click="goToRoute" @tap="goToRoute">
-  <div class="mdc-card demo-card">
+<div @click="goToRoute" @tap="goToRoute" class="card-container">
+  <div class="mdc-card menu-card">
     <section class="mdc-card__media">
       <h1 class="mdc-card__title mdc-card__title--large">{{ title }}</h1>
     <section class="mdc-card__actions">
@@ -30,11 +30,29 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
   .mdc-card {
     margin: 16px;
   }
-  .demo-card {
+  .menu-card {
     background-color: var(--mdc-theme-background);
+  }
+
+  .card-container {
+      min-width: 300px;
+    }
+
+  @media only screen and (max-width: 980px) {
+    
+    .card-container {
+      
+    }
+    .mdc-card {
+     max-width: 300px;
+     margin-right: auto;
+     margin-left: auto;
+     margin-bottom: 16px;
+     margin-top: 16px;
+    }
   }
 </style>

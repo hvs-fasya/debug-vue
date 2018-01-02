@@ -2,11 +2,11 @@
   <div>
     <div class="mdc-menu-anchor">
     <button ref="caret" @click="openMenu" @tap="openMenu" class="mdc-button">
-      Lesson {{ nummer }}<span class="caret"></span>
+      Lektion {{ nummer }}<span class="caret"></span>
     </button>
       <div class="mdc-simple-menu" v-bind:class="{'mdc-simple-menu--open': lessonsOpen }" tabindex="-1">
         <ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
-          <li @click="setLesson" v-for="number in lessonNumbers" class="mdc-list-item" role="menuitem" tabindex="0" :lessonId="number">Lesson {{ number }}</li>
+          <li @click="setLesson" v-for="number in lessonNumbers" class="mdc-list-item" role="menuitem" tabindex="0" :lessonId="number">Lektion {{ number }}</li>
         </ul>
       </div>
     </div>
